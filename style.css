@@ -1,0 +1,230 @@
+@font-face {
+    font-family: 'ULTRAFONT';
+    src: url("Resources/Fonts/Terraria.ttf");
+}
+
+html, body {
+    overscroll-behavior-x: none;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body::before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0; bottom: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url("Resources/Images/bg.png") center / cover repeat;
+    z-index: -1; /* Important to push it behind your content */
+    pointer-events: none;
+}
+
+
+body {
+    font-family: 'ULTRAFONT';
+    color: #b2fba5; /* Terraria light green */
+    overflow-x: hidden;
+    word-wrap: break-word;
+    line-height: 1.0;
+    min-width: 320px;
+    background-color: #1f1f1f;
+}
+
+button, a, img {
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+button {
+    font-family: 'ULTRAFONT';
+    background: #3e2f1c; /* dirt-like brown */
+    color: #a5f4ff; /* soft sky blue text */
+    border: 3px solid #77dd77; /* grass green */
+    border-radius: 10px;
+    font-size: 25px;
+    padding: 10px 20px;
+    margin-left: 15px;
+    box-shadow: 0 0 6px #77dd77;
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #a5f4ff;
+    color: black;
+    border-color: #ffffff;
+    box-shadow: 0 0 10px #a5f4ff;
+}
+
+#carrd_rect, #carrd_rect_header, #carrd_rect_footer {
+    background-color: #2e2e2e;
+    border: 5px solid #836953; /* wood frame */
+    border-radius: 50px;
+    width: 85%;
+    max-width: 800px;
+    margin: 2% auto;
+    padding: 2rem;
+    box-shadow: 10px 10px 20px rgba(165, 108, 75, 0.5);
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+#carrd_username {
+    font-size: clamp(2rem, 8vw, 4rem);
+    text-align: center;
+    color: #98fb98; /* pale green */
+    text-shadow: 0 0 12px #baffc9;
+    margin-bottom: 2rem;
+}
+
+#carrd_pfp {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 2rem;
+    box-shadow: 0 0 12px #a5f4ff;
+    transition: transform 0.2s ease-in-out;
+}
+
+#carrd_pfp:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 18px #a5f4ff;
+}
+
+#carrd_content h1 {
+    color: #a5f4ff;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 6px #b2ffff;
+}
+
+#carrd_content p, #carrd_content li {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #e0f5d0;
+    text-shadow: 0 0 3px #3c6e47;
+}
+
+#carrd_footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+#carrd_footer a {
+    min-width: 120px;
+    max-width: max-content;
+    flex: 1 1 120px;
+    text-decoration: none;
+}
+
+#carrd_footer a button {
+    background-color: #2a452a;
+    border-color: #b2fba5;
+    color: #b2fba5;
+    box-shadow: 0 0 8px #b2fba5;
+}
+
+#carrd_footer a button:hover {
+    background-color: #b2fba5;
+    color: black;
+    border-color: white;
+    box-shadow: 0 0 15px #b2fba5;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Limit textarea width and center it */
+form textarea {
+  max-width: 90%;
+  margin: 0 auto 10px;
+  display: block;
+}
+
+form button {
+    margin: 10px auto 0 auto !important;
+    display: block;
+}
+
+
+#embeds_container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    width: 85%;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+/* Make each embed smaller */
+#embeds_container #carrd_rect {
+    flex: 1 1 45%; /* roughly half width */
+    padding: 1.5rem;
+    border-color: #444; /* darker border for dark mode */
+    background-color: #222; /* darker background for dark mode */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
+}
+
+/* Style the iframes to fill container nicely */
+#embeds_container iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 0 10px rgba(90, 150, 120, 0.6);
+    background-color: #1f1f1f; /* fallback dark background */
+}
+
+@media (max-width: 768px) {
+    body::before {
+        background: url("Resources/Images/bg.png") center center / cover no-repeat;
+    }
+    #carrd_pfp {
+        width: 120px;
+        height: 120px;
+    }
+    #carrd_username {
+        font-size: clamp(1.5rem, 6vw, 3rem);
+    }
+    button {
+        font-size: 20px;
+        padding: 8px 16px;
+    }
+    #carrd_rect, #carrd_rect_header, #carrd_rect_footer {
+    width: 90vw;       /* Use viewport width to keep inside screen */
+    max-width: none;   /* Remove max-width for smaller devices */
+    margin: 1rem auto; /* Reduce vertical margin */
+    padding: 1rem 1.5rem; /* Slightly less padding */
+    box-sizing: border-box; /* Make sure padding is included in width */
+    }
+    #embeds_container {
+        flex-direction: column;
+        width: 90vw;
+        gap: 1.5rem;
+    }
+    #embeds_container #carrd_rect {
+        flex: none;
+        width: 100%;
+        padding: 1rem;
+    }
+    #embeds_container iframe {
+        height: 350px;
+    }
+}
