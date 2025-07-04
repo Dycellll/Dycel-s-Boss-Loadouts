@@ -79,6 +79,13 @@ button:hover {
     100% { opacity: 1; }
 }
 
+#carrd_pfp_container {
+    display: flex; 
+    gap: 50px; 
+    align-items: center; 
+    margin-left: 15%;
+}
+
 #carrd_username {
     font-size: clamp(2rem, 8vw, 4rem);
     text-align: center;
@@ -226,5 +233,11 @@ form button {
     }
     #embeds_container iframe {
         height: 350px;
+    }
+    #carrd_pfp_container {
+        display: block; 
+        gap: 0; 
+        align-items: normal; 
+        margin-left: 0%;
     }
 }
